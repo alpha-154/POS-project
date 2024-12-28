@@ -1,7 +1,7 @@
 "use client";
-
+import logo from "@/assets/logo.png";
 import { useState, useEffect } from "react";
-import { Moon, Sun, Maximize2, Minimize2 } from "lucide-react";
+import { Moon, Sun, Maximize2, Minimize2, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -12,6 +12,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 // Mock user data
 const userData = {
@@ -22,6 +26,8 @@ const userData = {
 };
 
 export default function Navbar() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [theme, setTheme] = useState<"light" | "dark">("light");
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
 
@@ -59,23 +65,42 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="border-b bg-background dark:border-slate-600 shadow-md">
+    <nav className="border-b bg-background dark:border-gray-800 shadow-md">
       <div className="flex h-16 items-center px-4 lg:px-6 xl:px-8 2xl:px-10">
         {/* Logo and Brand Name */}
-        <div className="flex items-center gap-2">
-          <svg
-            className="h-8 w-8 text-green-600"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="12" cy="12" r="12" />
-          </svg>
+        <div onClick={() => router.push("/")} className="flex items-center gap-2 cursor-pointer">
+          <Image 
+            src={logo}
+            alt="Logo"
+            width={50}
+            height={50}
+            className="border rounded-full"
+          />
           <span className="text-xl font-semibold text-foreground">B-POS</span>
         </div>
 
         {/* Right side controls */}
         <div className="ml-auto flex items-center space-x-4">
+          <div className="flex items-center justify-center gap-4">
+            <Link
+              href={"/"}
+              className={`${
+                pathname === "/" ? "text-lime-500" : "text-foreground"
+              } text-md font-bold cursor-pointer`}
+            >
+              Home
+            </Link>
+
+            <Link
+              href={"/dashboard"}
+              className={`${
+                pathname === "/dashboard" ? "text-lime-500" : "text-foreground"
+              } text-md font-bold cursor-pointer`}
+            >
+              Dashboard
+            </Link>
+          </div>
+
           {/* Theme Toggle */}
           <Button
             variant="ghost"
@@ -126,14 +151,25 @@ export default function Navbar() {
                         .join("")}
                     </AvatarFallback>
                   </Avatar>
+                  <ChevronDown className="w-4 h-4 text-lime-500" />
                 </div>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Settings</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href={"/"} className="w-full cursor-pointer">
+                  Home
+                </Link>
+              </DropdownMenuItem>
+
+              <DropdownMenuItem>
+                <Link href={"/dashboard"} className="w-full cursor-pointer">
+                  Dashboard
+                </Link>
+              </DropdownMenuItem>
+
               <DropdownMenuSeparator />
               <DropdownMenuItem>Log out</DropdownMenuItem>
             </DropdownMenuContent>

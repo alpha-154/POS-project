@@ -1,0 +1,120 @@
+{
+  "stats": {
+    "today": [
+      {
+        "title": "Sales Today",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "sales"
+      },
+      {
+        "title": "Purchase Today",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "purchase"
+      },
+      {
+        "title": "Sales Return Today",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "return"
+      },
+      {
+        "title": "Purchases Return Today",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "return"
+      }
+    ],
+    "total": [
+      {
+        "title": "Total Sales",
+        "amount": 0.0,
+        "change": -99.18,
+        "period": "from last month",
+        "icon": "sales"
+      },
+      {
+        "title": "Total Purchase",
+        "amount": 0.0,
+        "change": -100.0,
+        "period": "from last month",
+        "icon": "purchase"
+      },
+      {
+        "title": "Total Sales Return",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "return"
+      },
+      {
+        "title": "Total Purchases Return",
+        "amount": 0.0,
+        "change": 0.0,
+        "period": "from last day",
+        "icon": "return"
+      }
+    ]
+  },
+  "salesPurchases": [
+    { "month": "Jan", "sales": 100000, "purchases": 0 },
+    { "month": "Feb", "sales": 150000, "purchases": 1000000 },
+    { "month": "Mar", "sales": 50000, "purchases": 100000 },
+    { "month": "Jul", "sales": 0, "purchases": 200000 }
+  ],
+  "topProducts": [
+    { "name": "ABCDEF - 9000", "percentage": 68.42 },
+    { "name": "ABCDEF - 9000", "percentage": 31.58 },
+    { "name": "ABCDEF - 1", "percentage": 0.0001 }
+  ],
+  "topSelling": [
+    { "name": "ABCDEF", "quantity": 13, "amount": 19500.0 },
+    { "name": "ABCDEF", "quantity": 8, "amount": 19500.0 },
+    { "name": "ABCDEF", "quantity": 1, "amount": 1.0 }
+  ],
+  "recentSales": [
+    {
+      "reference": "PS10000657",
+      "customer": "Jacob Fatu",
+      "warehouse": "Warehouse 1",
+      "amount": 19500.0,
+      "due": 0.0,
+      "method": "Cash",
+      "status": "Due"
+    },
+    {
+      "reference": "PS10000657",
+      "customer": "N/A",
+      "warehouse": "Warehouse 2",
+      "amount": 19500.0,
+      "due": 0.0,
+      "method": "Cash",
+      "status": "Paid"
+    }
+  ],
+  "stockAlerts": [
+    {
+      "code": "747484727373",
+      "product": "Vitacare Aerosol Spray",
+      "size": "200ml",
+      "color": "N/A",
+      "warehouse": "Warehouse 1",
+      "quantity": 1400,
+      "alertQuantity": 10000
+    },
+    {
+      "code": "747484727373",
+      "product": "Spring Room Freshener",
+      "size": "N/A",
+      "color": "N/A",
+      "warehouse": "Warehouse 1",
+      "quantity": 0,
+      "alertQuantity": 0
+    }
+  ]
+}

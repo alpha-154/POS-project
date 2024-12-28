@@ -5,24 +5,14 @@ import { User, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import userData from "@/mockData/userData.json";
 
-// Import user data
-const userData = [
-  { id: 1, name: "Alice Johnson" },
-  { id: 2, name: "Bob Smith" },
-  { id: 3, name: "Charlie Brown" },
-  { id: 4, name: "Diana Prince" },
-  { id: 5, name: "Ethan Hunt" },
-  { id: 6, name: "Fiona Clarke" },
-  { id: 7, name: "George Miller" },
-  { id: 8, name: "Hannah Davis" },
-];
 
 export function UserSearch() {
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const filteredUsers = userData.filter((user) =>
+  const filteredUsers = userData.users.filter((user) =>
     user.name.toLowerCase().includes(query.toLowerCase())
   );
 
@@ -54,7 +44,7 @@ export function UserSearch() {
             </button>
           )}
         </div>
-        <Button size="icon" className="bg-green-600 hover:bg-green-700">
+        <Button size="icon" className="bg-lime-500 hover:bg-lime-500/80">
           <User className="h-4 w-4" />
         </Button>
       </div>
@@ -72,7 +62,11 @@ export function UserSearch() {
                   setIsOpen(false);
                 }}
               >
-                {user.name}
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold">{user.name}</span>
+                 
+                  <span className="text-xs text-gray-500">ID:{" "}{user.id}</span>
+                </div>
               </li>
             ))}
             {filteredUsers.length === 0 && (
