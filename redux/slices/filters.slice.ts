@@ -1,9 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface FiltersState {
-  warehouseId: number | null
-  categoryName: string | null
-  brandName: string | null
+  warehouseId: number | null;
+  categoryName: string | null;
+  brandName: string | null;
 }
 
 const initialState: FiltersState = {

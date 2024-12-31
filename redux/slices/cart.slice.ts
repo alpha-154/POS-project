@@ -12,7 +12,7 @@ const initialState: CartState = {
   total: 0,
 };
 
-// function to format numbers to 3 decimal places
+// function to format numbers to 2 decimal places
 const formatNumber = (num: number) => Number(num.toFixed(2));
 
 export const cartSlice = createSlice({

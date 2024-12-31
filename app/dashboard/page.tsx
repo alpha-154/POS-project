@@ -5,9 +5,9 @@ import { RecentSales } from './_components/RecentSales'
 import { StockAlerts } from './_components/StockAlerts'
 import dashboardData from "@/mockData/dashboardData.json";
 
-// export const metadata = {
-//   title: 'Dashboard - BPOS',
-// };
+export const metadata = {
+  title: 'Dashboard - BPOS',
+};
 
 export default function DashboardPage() {
   return (
